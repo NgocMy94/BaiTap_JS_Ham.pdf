@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/index.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-3 w-50 py-5 px-5">
+        <div class="card" style="width: 18rem">
+          <div class="card-header text-white bg-dark text-center">
+            Quản Lý Sinh Viên
+          </div>
+          <div class="card-body">
+            <form>
+              <p>Điểm Chuẩn</p>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inPut1"
+                  placeholder="Điểm Chuẩn"
+                />
+              </div>
+              <div class="form-group">
+                <label for="">Khu Vực Ưu Tiên</label>
+                <select class="form-control" id="inPut2">
+                  <option>--Chọn Khu Vực--</option>
+                  <option value=" 2  ">A</option>
+                  <option value="1">B</option>
+                  <option value=".5">C</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="">Đối Tượng Ưu Tiên</label>
+                <select class="form-control" id="inPut3">
+                  <option>--Đối Tượng--</option>
+                  <option value="2">1</option>
+                  <option value="1.5">2</option>
+                  <option value="1">3</option>
+                </select>
+              </div>
+              <p>Điểm Môn Thứ 1</p>
+              <div class="form-group">
+                <input type="text" class="form-control" id="inPut4" />
+              </div>
+              <p>Điểm Môn Thứ 2</p>
+              <div class="form-group">
+                <input type="text" class="form-control" id="inPut5" />
+              </div>
+              <p>Điểm Môn Thứ 3</p>
+              <div class="form-group">
+                <input type="text" class="form-control" id="inPut6" />
+              </div>
+              <button
+                onclick="tinhDiemChuan()"
+                type="button"
+                class="btn btn-danger"
+                id="btnCalc"
+              >
+                Tính nào
+              </button>
+              <p class="py-3" id="txtTinhDiem"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 w-50 py-5 px-5">
+        <div class="card" style="width: 18rem">
+          <div class="card-header text-white bg-dark text-center">
+            Tính Tiền Điện
+          </div>
+          <div class="card-body">
+            <form>
+              <p>Nhập Họ Và Tên</p>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inPut7"
+                  placeholder=" Họ Và Tên"
+                />
+              </div>
+              <p>Nhập Số KW</p>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inPut8"
+                  placeholder="Số KW"
+                />
+              </div>
+
+              <button
+                onclick="tinhTienDien()"
+                type="button"
+                class="btn btn-danger"
+                id="btnCalc"
+              >
+                Tính nào
+              </button>
+              <p class="py-3" id="txtTinhTienDien"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 w-50 py-5 px-5">
+        <div class="card" style="width: 18rem">
+          <div class="card-header text-white bg-dark text-center">
+            Tính Thuế Cá Nhân
+          </div>
+          <div class="card-body">
+            <form>
+              <p>Nhập Họ Và Tên</p>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inPut9"
+                  placeholder=" Họ Và Tên"
+                />
+              </div>
+              <p>Tổng Thu Nhập Năm</p>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inPut10"
+                  placeholder="Tổng Thu Nhập Năm"
+                />
+              </div>
+              <p>Số Người Phụ Thuộc</p>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inPut11"
+                  placeholder="Số Người Phụ Thuộc"
+                />
+              </div>
+
+              <button
+                onclick="tinhTienThue()"
+                type="button"
+                class="btn btn-danger"
+                id="btnCalc"
+              >
+                Tính nào
+              </button>
+              <p class="py-3" id="txtTinhThue"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 w-50 py-5 px-5">
+        <div class="card" style="width: 18rem">
+          <div class="card-header text-white bg-dark text-center">
+            Tính tiền cáp
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <div>
+                  <p>Chọn Loại Khách Hàng</p>
+                </div>
+                   
+                  <div>
+                    <input type="radio" name="selector" id="nhaDan" />Nhà Dân
+                  </div>
+                  <div>
+                    <input type="radio" name="selector" id="doanhNghiep" />
+                    Doanh Nghiệp
+                  </div>
+                
+              </div>
+              <p>Nhập Mã Khách Hàng</p>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inPut13"
+                  placeholder="Nhập Mã Khách Hàng"
+                />
+              </div>
+              <p>Số Kênh Cao Cấp</p>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inPut14"
+                  placeholder="Số Kênh Cao Cấp"
+                />
+              </div>
+             <div class="form-group">
+                <p>Số Kết Nối Thêm  Doanh Nghiệp:</p>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inPut15"
+                  placeholder="Số Kết Nối"
+                />
+              </div>
+
+              <button
+                onclick="tinhTienCap()"
+                type="button"
+                class="btn btn-danger"
+                id="btnCalc"
+              >
+                Tính nào
+              </button>
+              <p class="py-3" id="txtTinhTienCap"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
